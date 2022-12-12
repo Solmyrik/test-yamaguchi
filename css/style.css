@@ -158,10 +158,22 @@ body {
       -ms-flex: 0 0 852px;
           flex: 0 0 852px;
   position: relative;
+  min-height: 798px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media (max-width: 1260px) {
   .table__image {
+    min-height: auto;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -255,6 +267,10 @@ body {
   font-size: 40px;
   line-height: 170%;
   border-radius: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
   cursor: pointer;
