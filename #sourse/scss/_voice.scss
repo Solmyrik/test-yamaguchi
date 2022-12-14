@@ -1,0 +1,235 @@
+.voice-body {
+  background-color: $black;
+  background-image: url('../img/bg.svg');
+  @media (max-width: 1250px) {
+    background-image: none;
+  }
+}
+.voice {
+  &__container {
+    display: flex;
+    max-width: 1780px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    color: $white;
+    font-family: $montserrat;
+    @media (max-width: 1250px) {
+      display: block;
+    }
+  }
+
+  &__content {
+    padding-top: 72px;
+    flex: 0 1 42%;
+    @media (max-width: 1250px) {
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 120%;
+    margin-bottom: 60px;
+    @media (max-width: 500px) {
+      font-size: 34px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 42px;
+    max-width: 570px;
+    @media (max-width: 1250px) {
+      max-width: 100%;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__paragraph {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 170%;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+      font-size: 16px;
+    }
+  }
+
+  &__say {
+  }
+
+  &__center {
+    display: flex;
+    flex: 0 1 250px;
+    position: relative;
+    overflow: hidden;
+    height: 898px;
+    min-width: 243px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 65px;
+    overflow: hidden;
+  }
+
+  &__girl {
+    position: absolute;
+    left: 0%;
+    bottom: -100%;
+    @media (max-width: 1250px) {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &__hole {
+    position: absolute;
+    bottom: 5%;
+    background-color: #000000;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  &__phone {
+    flex: 0 1 44%;
+    text-align: right;
+    @media (max-width: 1250px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img {
+    padding-top: 42px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+    @media (max-width: 1250px) {
+      padding-top: 0;
+    }
+  }
+}
+.say-voice {
+  font-weight: 900;
+  span {
+    font-weight: 400;
+  }
+  &__ok {
+    margin-right: 3px;
+    @media (max-width: 1250px) {
+      font-size: 62px;
+    }
+  }
+  &__top {
+    font-size: 44px;
+    margin-bottom: 20px;
+    @media (max-width: 1500px) {
+      font-size: 40px;
+    }
+    @media (max-width: 1250px) {
+      font-size: 38px;
+    }
+  }
+
+  &__bottom {
+    padding-left: 55px;
+    font-size: 61px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1500px) {
+      padding-left: 25px;
+      font-size: 48px;
+    }
+    @media (max-width: 1250px) {
+      font-size: 48px;
+      flex-wrap: wrap;
+      padding-left: 0px;
+    }
+  }
+}
+
+.hole {
+  animation-name: hole;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+.hole_reduce {
+  animation-name: holereduce;
+  animation-duration: 2;
+  animation-fill-mode: forwards;
+}
+
+.girl_up {
+  animation-name: girlup;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+.girlmove {
+  animation-name: girlmove;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  @media (max-width: 1250px) {
+    animation-name: girlmove_mob;
+  }
+}
+
+@keyframes holereduce {
+  0% {
+    width: 249px;
+    height: 80px;
+  }
+  100% {
+    width: 194px;
+    height: 61px;
+  }
+}
+@keyframes hole {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  100% {
+    width: 249px;
+    height: 80px;
+  }
+}
+@keyframes girlup {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 5%;
+  }
+}
+
+@keyframes girlmove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes girlmove_mob {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
